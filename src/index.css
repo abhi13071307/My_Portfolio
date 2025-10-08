@@ -1,0 +1,189 @@
+/* src/index.css */
+
+/* Optional: load a clean UI font (uncomment if you want the font) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Global resets & base tweaks ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth; /* smooth scrolling for in-page links */
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  /* Use Inter if available, otherwise system sans */
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 0;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0f1724; /* dark base (can be overridden by App.jsx) */
+  color: #e6eef8;
+}
+
+/* Improve link behavior */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Small helper for visually hidden (accessible labels) */
+.sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+/* ---------- Coral accent variables (single place to change later) ---------- */
+:root {
+  --coral: #FF6B6B;
+  --coral-dark: #E85A5A;
+  --coral-contrast: #0f172a; /* text color to use on coral backgrounds */
+  --muted: #94a3b8;
+}
+
+/* ---------- Buttons / CTA utilities ---------- */
+/* Use @apply for Tailwind utility composition, then set colors via CSS variables */
+.btn-coral {
+  @apply rounded-xl px-5 py-3 font-semibold text-slate-900 inline-flex items-center justify-center;
+  background-color: var(--coral);
+  transition: background-color 160ms ease, transform 120ms ease, box-shadow 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+.btn-coral:hover {
+  background-color: var(--coral-dark);
+  transform: translateY(-1px);
+}
+.btn-coral:active {
+  transform: translateY(0);
+}
+.btn-coral:focus-visible {
+  outline: 3px solid rgba(255, 107, 107, 0.14);
+  outline-offset: 3px;
+}
+
+/* Outline variant */
+.btn-coral-outline {
+  @apply rounded-xl px-5 py-3 font-semibold inline-flex items-center justify-center;
+  color: var(--coral);
+  border: 1px solid var(--coral);
+  background: transparent;
+  transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
+}
+.btn-coral-outline:hover {
+  background-color: var(--coral);
+  color: var(--coral-contrast);
+  transform: translateY(-1px);
+}
+.btn-coral-outline:focus-visible {
+  outline: 3px solid rgba(255, 107, 107, 0.12);
+  outline-offset: 3px;
+}
+
+/* Small text button (link-like) */
+.btn-coral-ghost {
+  @apply text-sm font-medium;
+  color: var(--coral);
+}
+
+/* Accent helper (small inline highlights) */
+.accent {
+  color: var(--coral);
+}
+
+/* Coral gradient utility (hero / cards) */
+.bg-coral-gradient {
+  background: linear-gradient(135deg, rgba(255,107,107,0.95) 0%, rgba(255,138,138,0.25) 100%);
+}
+
+/* ---------- Card & surface helpers ---------- */
+.surface {
+  @apply rounded-2xl bg-slate-900/60 border border-slate-800 p-5;
+  backdrop-filter: blur(6px);
+}
+
+/* Tiny chips / badges */
+.chip {
+  @apply text-xs rounded-full px-3 py-1 font-medium;
+  background-color: rgba(255,255,255,0.02);
+  color: #cbd5e1;
+  border: 1px solid rgba(148,163,184,0.06);
+}
+
+/* ---------- Form inputs ---------- */
+.input {
+  @apply rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-slate-100 outline-none;
+}
+.input:focus {
+  @apply ring-2 ring-offset-1;
+  box-shadow: 0 0 0 4px rgba(255,107,107,0.06);
+  border-color: rgba(255,107,107,0.6);
+}
+
+/* ---------- Accessibility & focus helpers ---------- */
+:focus {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 3px solid rgba(255,107,107,0.12);
+  outline-offset: 3px;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  max-width: 72rem; /* 1152px */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* small responsive spacing helpers (optional) */
+.section-pad {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* ---------- Minor cosmetic tweaks ---------- */
+/* Make images and SVGs behave nicely */
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Ensure code blocks are readable */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  background: rgba(255,255,255,0.02);
+  padding: 0.125rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+/* small utilities */
+.kicker {
+  @apply text-xs tracking-widest uppercase;
+  color: var(--muted);
+}
+.lead {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+}
+
+/* ---------- end of file ---------- */
