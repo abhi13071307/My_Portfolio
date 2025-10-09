@@ -1,8 +1,14 @@
 // src/App.jsx
+import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
-import { useState } from "react";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import About from "./components/About";
+import Footer from "./components/Footer";
+
+
 
 export default function App() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -14,7 +20,7 @@ export default function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Client-side only demo. Replace with API call later.
+    // demo client-only behavior; we'll wire an API later
     console.log("Contact submit", form);
     setSent(true);
     setForm({ name: "", email: "", message: "" });
@@ -66,51 +72,11 @@ export default function App() {
           </div>
         </section>
 
+        {/* Education */}
+        <Education />
+
         {/* Skills */}
-        <section id="skills" className="max-w-6xl mx-auto px-4 py-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">Skills</h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="surface">
-              <h3 className="font-semibold">Frontend</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="chip">React</span>
-                <span className="chip">Vite</span>
-                <span className="chip">Tailwind</span>
-                <span className="chip">TypeScript (familiar)</span>
-              </div>
-            </div>
-
-            <div className="surface">
-              <h3 className="font-semibold">Backend</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="chip">Node.js</span>
-                <span className="chip">Express</span>
-                <span className="chip">Prisma</span>
-                <span className="chip">PostgreSQL</span>
-              </div>
-            </div>
-
-            <div className="surface">
-              <h3 className="font-semibold">DevOps / Tools</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="chip">Git</span>
-                <span className="chip">Docker</span>
-                <span className="chip">Vercel</span>
-                <span className="chip">Render</span>
-              </div>
-            </div>
-
-            <div className="surface">
-              <h3 className="font-semibold">ML / Other</h3>
-              <div className="mt-3 flex flex-wrap gap-2">
-                <span className="chip">Python</span>
-                <span className="chip">Pandas</span>
-                <span className="chip">Unity (game dev)</span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Skills />
 
         {/* Contact */}
         <section id="contact" className="max-w-3xl mx-auto px-4 py-16">
@@ -151,21 +117,7 @@ export default function App() {
             </div>
           </form>
         </section>
-
-        {/* Footer / Resume */}
-        <footer id="resume" className="border-t border-slate-800">
-          <div className="max-w-6xl mx-auto px-4 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-            <a href="#" className="btn-coral" onClick={(e) => e.preventDefault()}>
-              Download Resume (PDF)
-            </a>
-            <p className="text-xs text-slate-400">© {new Date().getFullYear()} Abhishek Kumar</p>
-            <div className="flex gap-3 text-sm">
-              <a className="hover:underline" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a className="hover:underline" href="https://github.com/abhi13071307" target="_blank" rel="noreferrer">GitHub</a>
-              <a className="hover:underline" href="mailto:you@example.com">Email</a>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </main>
     </div>
   );
