@@ -198,5 +198,140 @@ code {
   animation: float 4s ease-in-out infinite;
 }
 
+:root{
+  --coral: #ff6b6b;
+}
+
+/* Buttons */
+.btn-coral {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--coral)] text-slate-900 font-medium;
+}
+.btn-coral-outline {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--coral)] text-[var(--coral)] font-medium;
+}
+
+/* Card hover */
+article.rounded-2xl:hover {
+  transform: translateY(-6px);
+}
+
+/* Make the projects grid feel denser on wide screens */
+@media (min-width: 1280px) {
+  .max-w-7xl {
+    max-width: 1400px;
+  }
+}
+/* ---------- Experience: interactive card styles ---------- */
+
+/* Base interactive card */
+.interactive-card {
+  transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms cubic-bezier(.2,.9,.2,1), background-color 280ms;
+  transform-origin: center;
+  will-change: transform;
+  /* subtle inner border / glass effect */
+  background-image: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover / focus effect: lift + gentle scale + stronger shadow */
+.interactive-card:hover,
+.interactive-card:focus-within,
+.interactive-card.group-hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.7);
+}
+
+/* subtle glowing rim on hover using pseudo-element */
+.interactive-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
+  transition: opacity 240ms ease, filter 240ms ease;
+  opacity: 0;
+}
+
+.interactive-card:hover::before {
+  opacity: 1;
+  filter: drop-shadow(0 6px 14px rgba(255,107,107,0.06));
+}
+
+/* make chip-pill pop slightly on card hover */
+.chip-pill {
+  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms;
+  transform-origin: left center;
+}
+
+/* chip expand / pop on parent hover */
+.interactive-card:hover .chip-pill {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 6px 14px rgba(2,6,23,0.5);
+}
+
+/* keyboard accessibility: visible focus ring */
+.interactive-card:focus-within {
+  outline: 3px solid rgba(255,107,107,0.12);
+  outline-offset: 6px;
+}
+
+/* responsive tweak: reduce lift on small screens */
+@media (max-width: 768px) {
+  .interactive-card:hover,
+  .interactive-card:focus-within {
+    transform: none;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+  }
+  .chip-pill {
+    transform: none;
+  }
+}
+
+/* small accent: lift effect transition for headings inside card */
+.interactive-card h3,
+.interactive-card h4 {
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1);
+}
+.interactive-card:hover h3,
+.interactive-card:hover h4 {
+  transform: translateY(-2px);
+}
+/* ---------- Contact Cards ---------- */
+.contact-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  transform-origin: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  will-change: transform;
+}
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.1);
+}
+.icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 107, 107, 0.12),
+    rgba(255, 107, 107, 0.03)
+  );
+}
+.contact-card:hover .icon-wrap {
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 107, 107, 0.25),
+    rgba(255, 107, 107, 0.05)
+  );
+}
+html {
+  scroll-behavior: smooth;
+}
 
 /* ---------- end of file ---------- */

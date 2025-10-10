@@ -1,81 +1,91 @@
 // src/components/Projects.jsx
 import React from "react";
+import { Link } from "react-router-dom";
+import projects from "../data/projectsData";
 
-/**
- * Local projects list — change/add more projects here later.
- * We included your Store Rater project pulled from your GitHub.
- */
-const projects = [
-  {
-    title: "Store Rater",
-    stack: ["React", "Express", "PostgreSQL", "Prisma", "JWT", "bcryptjs"],
-    desc:
-      "Full-stack store rating platform with role-based access (Admin / Store Owner / User); users can register, log in, and rate stores 1–5.",
-    links: { demo: "N/A", code: "https://github.com/abhi13071307/Store_rater_Full_Stack" },
-  },
-];
+function GithubIcon({ repo }) {
+  const isAvailable = !!repo;
 
-function ProjectCard({ p }) {
   return (
-    <article className="group surface transition hover:scale-[1.01]">
-      <div className="flex items-start justify-between gap-3">
-        <div>
-          <h3 className="font-semibold text-lg text-white">{p.title}</h3>
-          <p className="mt-2 text-sm text-slate-300">{p.desc}</p>
-        </div>
-
-        <div className="flex gap-2 items-start">
-          <a
-            href={p.links.demo === "N/A" ? "#" : p.links.demo}
-            target="_blank"
-            rel="noreferrer"
-            className={`text-xs rounded-lg px-2 py-1 border ${p.links.demo === "N/A" ? "border-slate-700 text-slate-400" : "border-slate-700 hover:bg-slate-800"}`}
-            aria-label={`${p.title} demo`}
-            onClick={(e) => p.links.demo === "N/A" && e.preventDefault()}
-          >
-            Demo
-          </a>
-          <a
-            href={p.links.code}
-            target="_blank"
-            rel="noreferrer"
-            className="text-xs rounded-lg px-2 py-1 border border-slate-700 hover:bg-slate-800"
-            aria-label={`${p.title} code`}
-          >
-            Code
-          </a>
-        </div>
-      </div>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {p.stack.map((s) => (
-          <span key={s} className="text-[11px] rounded-md border border-slate-700 px-2 py-1 text-slate-300">
-            {s}
-          </span>
-        ))}
-      </div>
-    </article>
+    <a
+      href={isAvailable ? repo : undefined}
+      target="_blank"
+      rel="noreferrer"
+      aria-label="GitHub repository"
+      className={`p-2 rounded-md ${
+        isAvailable
+          ? "hover:bg-slate-800 text-slate-300"
+          : "cursor-not-allowed text-slate-700"
+      } transition`}
+      title={isAvailable ? "View Repository" : "Repository unavailable"}
+      onClick={(e) => {
+        if (!isAvailable) e.preventDefault();
+      }}
+    >
+      {/* GitHub SVG */}
+      <svg
+        className="w-5 h-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path d="M12 .5C5.73.5.8 5.5.8 11.7c0 4.9 3.2 9 7.6 10.5.6.1.8-.2.8-.5 0-.3 0-1.1 0-2-.3.1-.7.2-1.1.2-2.1 0-2.5-1.7-2.7-2.2-.1-.3-.7-1.5-1.2-1.8-.4-.2-1-.8-.01-.8.9-.01 1.6.9 1.8 1.2 1.1 1.8 2.8 1.3 3.4 1.0.1-.8.4-1.3.7-1.6-2.8-.3-5.7-1.4-5.7-6.1 0-1.4.5-2.5 1.3-3.4-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.4 1.3.9-.3 2-.4 3.1-.4 1 0 2 .1 3.1.4 2.3-1.6 3.3-1.3 3.3-1.3.6 1.7.2 3 .1 3.2.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.8-5.7 6.1.4.3.8 1.0.8 2.1 0 1.6 0 2.9 0 3.2 0 .3.2.6.8.5 4.4-1.5 7.6-5.6 7.6-10.5C23.2 5.5 18.27.5 12 .5z" />
+      </svg>
+    </a>
   );
 }
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-4 py-16">
-      <div className="flex items-end justify-between mb-8">
-        <h2 className="text-2xl md:text-3xl font-bold">Featured Projects</h2>
-        <a
-          href="https://github.com/abhi13071307"
-          target="_blank"
-          rel="noreferrer"
-          className="text-sm btn-coral-ghost hover:underline"
-        >
-          GitHub →
-        </a>
+    <section id="projects" className="max-w-7xl mx-auto px-4 py-16">
+      <div className="text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white">Projects</h2>
+        <div className="mx-auto mt-3 w-20 md:w-28 h-0.5 bg-slate-700 rounded"></div>
+        <p className="mt-3 text-slate-400 max-w-2xl mx-auto">
+          A curated collection of my professional and academic projects (summaries taken from my resume).
+        </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {projects.map((p) => (
-          <ProjectCard key={p.title} p={p} />
+          <article
+            key={p.slug}
+            className="rounded-2xl border border-slate-800 p-6 bg-slate-950/60 hover:shadow-xl transition"
+          >
+            <div className="flex items-start justify-between">
+              <div>
+                <h3 className="text-2xl font-bold text-white">
+                  <Link to={`/projects/${p.slug}`} className="hover:underline">
+                    {p.title}
+                  </Link>
+                </h3>
+              </div>
+              {/* GitHub icon top-right */}
+              <GithubIcon repo={p.repo} />
+            </div>
+
+            <p className="mt-4 text-slate-300">{p.summary}</p>
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {(p.tech || []).map((t) => (
+                <span
+                  key={t}
+                  className="px-3 py-1 rounded-md text-xs border border-slate-800 bg-slate-900/40 text-slate-300"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-6">
+              <Link
+                to={`/projects/${p.slug}`}
+                className="text-sm text-[var(--coral)] hover:underline"
+              >
+                Read more →
+              </Link>
+            </div>
+          </article>
         ))}
       </div>
     </section>

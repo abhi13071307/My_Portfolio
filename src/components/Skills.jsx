@@ -350,6 +350,7 @@ export default function Skills() {
       {/* Header */}
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white">Skills & Technologies</h2>
+        <div className="mx-auto mt-3 w-20 md:w-28 h-0.5 bg-slate-700 rounded"></div>
         <p className="mt-3 text-slate-400 max-w-2xl mx-auto">
           My technical toolkit spans across modern web development, cloud technologies, and machine learning.
         </p>
