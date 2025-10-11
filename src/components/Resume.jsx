@@ -1,18 +1,13 @@
-// src/components/Resume.jsx
 import React from "react";
-
-const PDF_PATH = "/resume/Abhishek_Kumar_Resume.pdf"; // put your PDF in public/resume/
-
+const PDF_PATH = "/resume/Abhishek_Kumar_Resume.pdf";
 export default function Resume() {
   return (
     <section className="max-w-6xl mx-auto px-4 py-16">
-      {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <div>
           <h1 className="text-3xl md:text-4xl font-extrabold text-white">Resume</h1>
           <p className="text-slate-400 mt-1">View and download my professional resume</p>
         </div>
-
         <div className="flex items-center gap-3">
           <a
             href={PDF_PATH}
@@ -31,8 +26,6 @@ export default function Resume() {
           </a>
         </div>
       </div>
-
-      {/* Embedded PDF Viewer */}
       <div className="rounded-2xl border border-slate-800 overflow-hidden bg-slate-950/60">
         <object
           data={`${PDF_PATH}#view=FitH`}
@@ -48,9 +41,8 @@ export default function Resume() {
           />
         </object>
       </div>
-
       <p className="text-xs text-slate-500 mt-3">
-        If the viewer doesn’t load, use the buttons above to open or download the PDF.
+        Schedule an interview anytime for future opportunities.
       </p>
     </section>
   );

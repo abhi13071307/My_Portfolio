@@ -1,27 +1,21 @@
 // src/components/Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-
 export default function Footer() {
   const quickLinks = [
     { label: "Projects", href: "/#projects" },
     { label: "Experience", href: "/#experience" },
     { label: "Skills", href: "/#skills" },
-    { label: "Awards", href: "/#awards" },
   ];
-
   const resources = [
-    { label: "Resume", to: "/resume" }, // ✅ updated
+    { label: "Resume", to: "/resume" }, 
     { label: "Get in Touch", href: "/#contact" },
-    { label: "Source Code", href: "https://github.com/abhi13071307" },
+    { label: "Source Code", href: "https://github.com/abhi13071307/My_Portfolio" },
   ];
-
   const socials = [
     { label: "GitHub", href: "https://github.com/abhi13071307", icon: "github" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/abhishek1307", icon: "linkedin" },
-    { label: "Email", href: "mailto:abhi.kr.1307@gmail.com", icon: "mail" },
   ];
-
   return (
     <footer className="bg-slate-950 text-slate-200 mt-12 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-12">
@@ -35,18 +29,11 @@ export default function Footer() {
               <div>
                 <h3 className="text-white font-semibold">Abhishek Kumar</h3>
                 <p className="text-xs text-slate-400">
-                  Full-Stack Developer — building scalable web apps and APIs.
+                   Developer — building scalable web apps and APIs.
                 </p>
               </div>
             </div>
-
-            <p className="mt-5 text-sm text-slate-400 max-w-sm">
-              Software Engineer passionate about creating innovative solutions
-              with modern technologies.
-            </p>
           </div>
-
-          {/* Quick Links */}
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-3 text-sm">
@@ -59,15 +46,12 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Resources */}
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Resources</h4>
             <ul className="space-y-3 text-sm">
               {resources.map((r) => (
                 <li key={r.label}>
-                  {r.to ? (
-                    // ✅ Use React Router Link for internal /resume page
+                  {r.to ? (                   
                     <Link className="text-slate-300 hover:text-white" to={r.to}>
                       {r.label}
                     </Link>
@@ -85,8 +69,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Connect */}
           <div>
             <h4 className="text-sm font-semibold text-white mb-4">Connect</h4>
             <p className="text-sm text-slate-400 mb-4">
@@ -103,7 +85,7 @@ export default function Footer() {
                   aria-label={s.label}
                   className="p-2 rounded-md hover:bg-slate-900 transition"
                 >
-                  {/* small icon SVGs */}
+                  
                   {s.icon === "github" && (
                     <svg
                       width="18"
@@ -132,34 +114,18 @@ export default function Footer() {
                       />
                     </svg>
                   )}
-                  {s.icon === "mail" && (
-                    <svg
-                      width="18"
-                      height="18"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="text-slate-300"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"
-                      />
-                    </svg>
-                  )}
                 </a>
               ))}
             </div>
           </div>
         </div>
-
-        {/* divider */}
         <div className="border-t border-slate-800 mt-8 pt-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-xs text-slate-400">
-              © {new Date().getFullYear()} Abhishek Kumar. Built with care.
+              © {new Date().getFullYear()} Abhishek Kumar. 
             </p>
             <p className="text-xs text-slate-400">
-              Designed & Developed with passion • Open Source
+              Designing and Developing everyday with passion • Contact for same.
             </p>
           </div>
         </div>

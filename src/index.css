@@ -1,44 +1,30 @@
-/* src/index.css */
-
-/* Optional: load a clean UI font (uncomment if you want the font) */
-/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap'); */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* ---------- Global resets & base tweaks ---------- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 html {
-  scroll-behavior: smooth; /* smooth scrolling for in-page links */
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
 }
-
 body {
-  /* Use Inter if available, otherwise system sans */
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   margin: 0;
   padding: 0;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0f1724; /* dark base (can be overridden by App.jsx) */
+  background-color: #0f1724;
   color: #e6eef8;
 }
-
-/* Improve link behavior */
 a {
   color: inherit;
   text-decoration: none;
 }
-
-/* Small helper for visually hidden (accessible labels) */
 .sr-only {
   position: absolute !important;
   height: 1px;
@@ -47,17 +33,12 @@ a {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
-
-/* ---------- Coral accent variables (single place to change later) ---------- */
 :root {
   --coral: #FF6B6B;
   --coral-dark: #E85A5A;
   --coral-contrast: #0f172a; /* text color to use on coral backgrounds */
   --muted: #94a3b8;
 }
-
-/* ---------- Buttons / CTA utilities ---------- */
-/* Use @apply for Tailwind utility composition, then set colors via CSS variables */
 .btn-coral {
   @apply rounded-xl px-5 py-3 font-semibold text-slate-900 inline-flex items-center justify-center;
   background-color: var(--coral);
@@ -76,8 +57,6 @@ a {
   outline: 3px solid rgba(255, 107, 107, 0.14);
   outline-offset: 3px;
 }
-
-/* Outline variant */
 .btn-coral-outline {
   @apply rounded-xl px-5 py-3 font-semibold inline-flex items-center justify-center;
   color: var(--coral);
@@ -94,38 +73,26 @@ a {
   outline: 3px solid rgba(255, 107, 107, 0.12);
   outline-offset: 3px;
 }
-
-/* Small text button (link-like) */
 .btn-coral-ghost {
   @apply text-sm font-medium;
   color: var(--coral);
 }
-
-/* Accent helper (small inline highlights) */
 .accent {
   color: var(--coral);
 }
-
-/* Coral gradient utility (hero / cards) */
 .bg-coral-gradient {
   background: linear-gradient(135deg, rgba(255,107,107,0.95) 0%, rgba(255,138,138,0.25) 100%);
 }
-
-/* ---------- Card & surface helpers ---------- */
 .surface {
   @apply rounded-2xl bg-slate-900/60 border border-slate-800 p-5;
   backdrop-filter: blur(6px);
 }
-
-/* Tiny chips / badges */
 .chip {
   @apply text-xs rounded-full px-3 py-1 font-medium;
   background-color: rgba(255,255,255,0.02);
   color: #cbd5e1;
   border: 1px solid rgba(148,163,184,0.06);
 }
-
-/* ---------- Form inputs ---------- */
 .input {
   @apply rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-slate-100 outline-none;
 }
@@ -134,8 +101,6 @@ a {
   box-shadow: 0 0 0 4px rgba(255,107,107,0.06);
   border-color: rgba(255,107,107,0.6);
 }
-
-/* ---------- Accessibility & focus helpers ---------- */
 :focus {
   outline: none;
 }
@@ -143,8 +108,6 @@ a {
   outline: 3px solid rgba(255,107,107,0.12);
   outline-offset: 3px;
 }
-
-/* ---------- Layout helpers ---------- */
 .container {
   max-width: 72rem; /* 1152px */
   margin-left: auto;
@@ -152,31 +115,22 @@ a {
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
-/* small responsive spacing helpers (optional) */
 .section-pad {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
-
-/* ---------- Minor cosmetic tweaks ---------- */
-/* Make images and SVGs behave nicely */
 img, svg {
   display: block;
   max-width: 100%;
   height: auto;
   pointer-events: none;
 }
-
-/* Ensure code blocks are readable */
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
   background: rgba(255,255,255,0.02);
   padding: 0.125rem 0.35rem;
   border-radius: 0.25rem;
 }
-
-/* small utilities */
 .kicker {
   @apply text-xs tracking-widest uppercase;
   color: var(--muted);
@@ -193,58 +147,42 @@ code {
     transform: translateY(-8px);
   }
 }
-
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
-
 :root{
   --coral: #ff6b6b;
 }
-
-/* Buttons */
 .btn-coral {
   @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--coral)] text-slate-900 font-medium;
 }
 .btn-coral-outline {
   @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[var(--coral)] text-[var(--coral)] font-medium;
 }
-
-/* Card hover */
 article.rounded-2xl:hover {
   transform: translateY(-6px);
 }
-
-/* Make the projects grid feel denser on wide screens */
 @media (min-width: 1280px) {
   .max-w-7xl {
     max-width: 1400px;
   }
 }
-/* ---------- Experience: interactive card styles ---------- */
-
-/* Base interactive card */
 .interactive-card {
   transition: transform 280ms cubic-bezier(.2,.9,.2,1), box-shadow 280ms cubic-bezier(.2,.9,.2,1), background-color 280ms;
   transform-origin: center;
   will-change: transform;
-  /* subtle inner border / glass effect */
   background-image: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(0,0,0,0.02));
   box-shadow: 0 6px 20px rgba(0,0,0,0.45);
   border-radius: 12px;
   position: relative;
   overflow: hidden;
 }
-
-/* Hover / focus effect: lift + gentle scale + stronger shadow */
 .interactive-card:hover,
 .interactive-card:focus-within,
 .interactive-card.group-hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: 0 18px 40px rgba(2,6,23,0.7);
 }
-
-/* subtle glowing rim on hover using pseudo-element */
 .interactive-card::before {
   content: "";
   position: absolute;
@@ -255,31 +193,22 @@ article.rounded-2xl:hover {
   transition: opacity 240ms ease, filter 240ms ease;
   opacity: 0;
 }
-
 .interactive-card:hover::before {
   opacity: 1;
   filter: drop-shadow(0 6px 14px rgba(255,107,107,0.06));
 }
-
-/* make chip-pill pop slightly on card hover */
 .chip-pill {
   transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms;
   transform-origin: left center;
 }
-
-/* chip expand / pop on parent hover */
 .interactive-card:hover .chip-pill {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 6px 14px rgba(2,6,23,0.5);
 }
-
-/* keyboard accessibility: visible focus ring */
 .interactive-card:focus-within {
   outline: 3px solid rgba(255,107,107,0.12);
   outline-offset: 6px;
 }
-
-/* responsive tweak: reduce lift on small screens */
 @media (max-width: 768px) {
   .interactive-card:hover,
   .interactive-card:focus-within {
@@ -290,8 +219,6 @@ article.rounded-2xl:hover {
     transform: none;
   }
 }
-
-/* small accent: lift effect transition for headings inside card */
 .interactive-card h3,
 .interactive-card h4 {
   transition: transform 260ms cubic-bezier(.2,.9,.2,1);
@@ -300,7 +227,6 @@ article.rounded-2xl:hover {
 .interactive-card:hover h4 {
   transform: translateY(-2px);
 }
-/* ---------- Contact Cards ---------- */
 .contact-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   transform-origin: center;
@@ -334,4 +260,3 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ---------- end of file ---------- */

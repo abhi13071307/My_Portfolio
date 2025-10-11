@@ -1,30 +1,24 @@
-// src/components/Experience.jsx
 import React from "react";
-
-/**
- * Experience section — interactive cards with subtle lift/scale on hover.
- * Content taken from uploaded resume.
- */
-
 const experiences = [
   {
     company: "Pi42 (Crypto Exchange)",
     role: "Quantitative Development / Backend Development Intern",
-    location: "Remote",
-    period: "2024 (internship)",
+    location: "Bengaluru",
+    period: "November 2024 - May 2025",
     bullets: [
-      "Built CRUD APIs with NestJS, Prisma ORM, and PostgreSQL.",
+      "Built CRUD APIs with Python, Node.JS, Swagger, Prisma ORM, and PostgreSQL.",
       "Worked on data modeling, API integration, and backtesting algorithms.",
       "Contributed to team projects in agile workflows and participated in testing & debugging.",
+      "Created and deployed strategies locally and at production level.",
     ],
-    tags: ["NestJS", "Prisma", "PostgreSQL", "APIs", "Backtesting"],
+    tags: ["Node.JS", "Python", "Prisma", "PostgreSQL", "APIs", "Backtesting", "Swagger"],
     color: "violet",
   },
   {
     company: "Phemesoftware Pvt Ltd (IBM mentorship)",
     role: "Machine Learning Intern",
-    location: "Remote",
-    period: "2023 (internship)",
+    location: "Dehradun",
+    period: "January 2024 - April 2024",
     bullets: [
       "Developed a Python-based AI recommendation system under IBM mentorship.",
       "Designed modular, testable code and documented solution workflows.",
@@ -34,7 +28,6 @@ const experiences = [
     color: "teal",
   },
 ];
-
 function Chip({ children, color = "slate" }) {
   const colorMap = {
     violet: "bg-violet-950/40 border-violet-800 text-violet-300",
@@ -49,7 +42,6 @@ function Chip({ children, color = "slate" }) {
     </span>
   );
 }
-
 export default function Experience() {
   const gotoContact = (e) => {
     e.preventDefault();
@@ -61,19 +53,16 @@ export default function Experience() {
       window.history.pushState({}, "", "/");
     }
   };
-
   return (
     <section id="experience" className="max-w-6xl mx-auto px-4 py-16">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-extrabold text-white">Work Experience</h2>
         <div className="mx-auto mt-3 w-20 md:w-28 h-0.5 bg-slate-700 rounded"></div>
       </div>
-
       <div className="flex flex-col gap-8">
         {experiences.map((exp, idx) => (
           <div
             key={idx}
-            /* note: added 'group interactive-card' classes for hover/focus effects */
             className="interactive-card group rounded-2xl border border-slate-800 p-6 md:p-8 bg-slate-950/60"
           >
             <div className="flex items-start justify-between gap-4">
@@ -92,7 +81,6 @@ export default function Experience() {
                     <path fill="currentColor" d="M3 11h18v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6z" />
                   </svg>
                 </div>
-
                 <div>
                   <h3 className="text-lg md:text-xl font-semibold text-white">{exp.company}</h3>
                   <div className="text-sm text-slate-400">
@@ -100,8 +88,7 @@ export default function Experience() {
                   </div>
                 </div>
               </div>
-
-              <div className="chip text-xs">Professional</div>
+              <div className="chip text-xs">Internship</div>
             </div>
 
             <div className="mt-6">
@@ -126,9 +113,8 @@ export default function Experience() {
             </div>
           </div>
         ))}
-
         <p className="text-center text-slate-400 mt-4">
-          Building the future of crypto derivatives trading with cutting-edge technology &amp; innovative solutions.
+          Building the future with cutting-edge technology &amp; innovative solutions.
         </p>
 
         <div className="text-center mt-2">

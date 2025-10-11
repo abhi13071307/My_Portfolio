@@ -1,21 +1,5 @@
 import React from "react";
-
 const contacts = [
-  {
-    label: "GitHub",
-    username: "@abhi13071307",
-    href: "https://github.com/abhi13071307",
-    desc: "Check out my open-source projects and contributions.",
-    color: "text-slate-300",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path
-          fill="currentColor"
-          d="M12 .5C5.73.5.8 5.5.8 11.7c0 4.9 3.2 9 7.6 10.5.6.1.8-.2.8-.5 0-.3 0-1.1 0-2.0-3.1.7-3.7-.8-3.9-1.5-.1-.4-.7-1.5-1.2-1.8-.4-.2-1-.8-.01-.8.9-.01 1.6.9 1.8 1.2 1.1 1.8 2.8 1.3 3.4 1.0.1-.8.4-1.3.7-1.6-2.8-.3-5.7-1.4-5.7-6.1 0-1.4.5-2.5 1.3-3.4-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.4 1.3.9-.3 2-.4 3.1-.4 1 0 2 .1 3.1.4 2.3-1.6 3.3-1.3 3.3-1.3.6 1.7.2 3 .1 3.2.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.8-5.7 6.1.4.3.8 1.0.8 2.1 0 1.6 0 2.9 0 3.2 0 .3.2.6.8.5 4.4-1.5 7.6-5.6 7.6-10.5C23.2 5.5 18.3.5 12 .5z"
-        />
-      </svg>
-    ),
-  },
   {
     label: "LinkedIn",
     username: "Abhishek Kumar",
@@ -27,6 +11,36 @@ const contacts = [
         <path
           fill="currentColor"
           d="M4.98 3.5C4.98 4.9 3.9 6 2.5 6S0 4.9 0 3.5 1.1 1 2.5 1 4.98 2.1 4.98 3.5zM.5 8h4V24h-4V8zM8.5 8h3.8v2.2h.1c.5-.9 1.8-1.8 3.6-1.8 3.8 0 4.5 2.4 4.5 5.5V24h-4V15.6c0-2 0-4.6-2.8-4.6-2.8 0-3.2 2.2-3.2 4.4V24h-4V8z"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: "GitHub",
+    username: "@abhi13071307",
+    href: "https://github.com/abhi13071307",
+    desc: "Check out my projects and contributions.",
+    color: "text-slate-300",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path
+          fill="currentColor"
+          d="M12 .5C5.73.5.8 5.5.8 11.7c0 4.9 3.2 9 7.6 10.5.6.1.8-.2.8-.5 0-.3 0-1.1 0-2.0-3.1.7-3.7-.8-3.9-1.5-.1-.4-.7-1.5-1.2-1.8-.4-.2-1-.8-.01-.8.9-.01 1.6.9 1.8 1.2 1.1 1.8 2.8 1.3 3.4 1.0.1-.8.4-1.3.7-1.6-2.8-.3-5.7-1.4-5.7-6.1 0-1.4.5-2.5 1.3-3.4-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.4 1.3.9-.3 2-.4 3.1-.4 1 0 2 .1 3.1.4 2.3-1.6 3.3-1.3 3.3-1.3.6 1.7.2 3 .1 3.2.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.8-5.7 6.1.4.3.8 1.0.8 2.1 0 1.6 0 2.9 0 3.2 0 .3.2.6.8.5 4.4-1.5 7.6-5.6 7.6-10.5C23.2 5.5 18.3.5 12 .5z"
+        />
+      </svg>
+    ),
+  },
+    {
+    label: "Itch.io",
+    username: "abhishek1307.itch.io",
+    href: "https://abhishek1307.itch.io/",
+    desc: "Explore the indie games I’ve built and published.",
+    color: "text-orange-400",
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <path
+          fill="currentColor"
+          d="M2 4h20l2 4v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8l2-4zm2 4v10h16V8H4zm8 9a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
         />
       </svg>
     ),
@@ -65,7 +79,7 @@ const contacts = [
     label: "Instagram",
     username: "@rahulxxw",
     href: "https://www.instagram.com/rahulxxw",
-    desc: "Behind-the-scenes of my projects and life.",
+    desc: "Behind-the-scenes of my professional life.",
     color: "text-pink-500",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -76,23 +90,7 @@ const contacts = [
       </svg>
     ),
   },
-  {
-    label: "Itch.io",
-    username: "abhishek1307.itch.io",
-    href: "https://abhishek1307.itch.io/",
-    desc: "Explore the indie games I’ve built and published.",
-    color: "text-orange-400",
-    icon: (
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path
-          fill="currentColor"
-          d="M2 4h20l2 4v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8l2-4zm2 4v10h16V8H4zm8 9a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-2.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
-        />
-      </svg>
-    ),
-  },
 ];
-
 export default function Contact() {
   return (
     <section id="contact" className="max-w-6xl mx-auto px-4 py-20">
@@ -102,11 +100,10 @@ export default function Contact() {
         </h2>
         <div className="mx-auto mt-3 w-24 h-0.5 bg-slate-700 rounded"></div>
         <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-          Ready to collaborate, discuss opportunities, or just chat tech?  
+          Ready to collaborate, discuss opportunities, or just chat?  
           Feel free to connect with me through any platform below.
         </p>
       </div>
-
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {contacts.map((c, i) => (
           <a
