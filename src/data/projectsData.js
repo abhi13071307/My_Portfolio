@@ -47,6 +47,8 @@ const projects = [
       "React.js",
       "Node.js",
       "Express.js",
+      "Large Language Models",
+      "Generative AI",
       "OpenAI API",
       "Weather API Integration",
       "MongoDB",
@@ -116,44 +118,6 @@ const projects = [
     }
   },
   {
-    title: "Kitchen Chicken 3D",
-    slug: "kitchenchicken-fullgame-3d",
-    summary:
-      "A 3D cooking and food delivery simulation game built in Unity. Players prepare dishes, manage kitchen orders, and deliver meals on time while navigating a dynamic 3D environment.",
-    tech: [
-      "Unity",
-      "C#",
-      "Blender",
-      "Physics Engine",
-      "NavMesh AI",
-      "3D Modeling",
-      "Animation",
-      "Game Design Patterns"
-    ],
-    repo: "https://github.com/abhi13071307/KitchenChicken-FullGame-3D",
-    details: {
-      overview:
-        "Kitchen Chicken 3D is a full-fledged Unity game project where players step into a fast-paced kitchen environment. The gameplay focuses on cooking correct recipes, fulfilling customer orders, and managing deliveries efficiently within a time limit.",
-      features: [
-        "Fully interactive 3D environment with realistic physics",
-        "Player-controlled cooking, ingredient management, and delivery",
-        "Recipe-based gameplay with real-time scoring and time constraints",
-        "AI-powered customer order system using Unity’s NavMesh agents",
-        "Polished UI and smooth animations for an engaging experience"
-      ],
-      challenges: [
-        "Balancing performance and visual fidelity for 3D scenes",
-        "Creating realistic object physics and responsive controls",
-        "Implementing order management logic within Unity's event system"
-      ],
-      outcomes: [
-        "Developed a fully functional 3D Unity game from concept to completion",
-        "Improved understanding of C# scripting and Unity physics systems",
-        "Gained practical experience in game loop design and optimization"
-      ]
-    }
-  },
-  {
     title: "Instant Feedback System using Facial Recognition",
     slug: "instant-feedback-system-using-facial-recognition",
     summary:
@@ -188,6 +152,44 @@ const projects = [
         "Created a production-ready emotion detection system using OpenCV and DeepFace",
         "Demonstrated practical integration of AI models with live CCTV data",
         "Enhanced experience in computer vision and applied AI model deployment"
+      ]
+    }
+  },
+  {
+    title: "Kitchen Chicken 3D",
+    slug: "kitchenchicken-fullgame-3d",
+    summary:
+      "A 3D cooking and food delivery simulation game built in Unity. Players prepare dishes, manage kitchen orders, and deliver meals on time while navigating a dynamic 3D environment.",
+    tech: [
+      "Unity",
+      "C#",
+      "Blender",
+      "Physics Engine",
+      "NavMesh AI",
+      "3D Modeling",
+      "Animation",
+      "Game Design Patterns"
+    ],
+    repo: "https://github.com/abhi13071307/KitchenChicken-FullGame-3D",
+    details: {
+      overview:
+        "Kitchen Chicken 3D is a full-fledged Unity game project where players step into a fast-paced kitchen environment. The gameplay focuses on cooking correct recipes, fulfilling customer orders, and managing deliveries efficiently within a time limit.",
+      features: [
+        "Fully interactive 3D environment with realistic physics",
+        "Player-controlled cooking, ingredient management, and delivery",
+        "Recipe-based gameplay with real-time scoring and time constraints",
+        "AI-powered customer order system using Unity’s NavMesh agents",
+        "Polished UI and smooth animations for an engaging experience"
+      ],
+      challenges: [
+        "Balancing performance and visual fidelity for 3D scenes",
+        "Creating realistic object physics and responsive controls",
+        "Implementing order management logic within Unity's event system"
+      ],
+      outcomes: [
+        "Developed a fully functional 3D Unity game from concept to completion",
+        "Improved understanding of C# scripting and Unity physics systems",
+        "Gained practical experience in game loop design and optimization"
       ]
     }
   }
