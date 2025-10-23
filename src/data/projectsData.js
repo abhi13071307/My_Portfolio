@@ -1,5 +1,78 @@
 const projects = [
   {
+    title: "Interactive User Relationship & Hobby Network",
+    slug: "interactive-user-relationship-and-hobby-network",
+    summary:
+      "A full-stack application that visualizes relationships and hobbies as interactive graph networks using React Flow and MongoDB.",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "React Flow",
+      "Tailwind CSS",
+      "REST API",
+    ],
+    repo: "https://github.com/abhi13071307/InteractiveUserRelationship_and_HobbyNetwork_FullStack_Application",
+    details: {
+      overview:
+        "This project allows users to explore and visualize relationships between people and hobbies using dynamic, interactive graphs. It combines a responsive React frontend with a Node.js and MongoDB backend to manage users, hobbies, and their connections.",
+      features: [
+        "Interactive graph visualization using React Flow.",
+        "Full CRUD operations for managing users and hobbies.",
+        "Responsive UI with Tailwind CSS.",
+        "REST APIs for relationship and hobby management.",
+      ],
+      challenges: [
+        "Designing efficient relationship modeling in MongoDB.",
+        "Maintaining smooth, real-time graph rendering in React Flow.",
+        "Ensuring scalability and responsiveness in complex graph updates.",
+      ],
+      outcomes: [
+        "Built a visually engaging relationship mapping tool.",
+        "Improved understanding of graph-based data structures and visualization.",
+        "Enhanced frontend–backend synchronization in full-stack projects.",
+      ],
+    },
+  },
+  {
+    title: "Agent Distribution System",
+    slug: "agent-distribution-system",
+    summary:
+      "A MERN-based automation platform that validates CSV uploads, distributes tasks equally among agents, and manages authentication with JWT.",
+    tech: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Multer",
+      "JWT Authentication",
+      "CSV Parser",
+      "Tailwind CSS",
+    ],
+    repo: "https://github.com/abhi13071307/AgentDistribution_FullStack",
+    details: {
+      overview:
+        "Agent Distribution System streamlines CSV-based task allocation by parsing and validating files on upload, then distributing entries evenly among agents. Admins can manage agents and uploads through a secure dashboard.",
+      features: [
+        "JWT-based authentication for Admin and Agent roles.",
+        "CSV upload and validation with Multer.",
+        "Equal task distribution logic implemented in Node.js backend.",
+        "Responsive dashboard built using React and Tailwind CSS.",
+      ],
+      challenges: [
+        "Designing a fair distribution algorithm for uploaded records.",
+        "Handling file parsing and validation efficiently.",
+        "Implementing secure role-based access with JWT.",
+      ],
+      outcomes: [
+        "Delivered a fully functional MERN app with automation logic.",
+        "Strengthened understanding of file handling and JWT auth.",
+        "Improved ability to integrate backend logic with clean frontend UI.",
+      ],
+    },
+  },
+  {
     title: "Store Rater",
     slug: "store-rater-full-stack",
     summary:
@@ -13,7 +86,7 @@ const projects = [
       "REST API",
       "JWT Authentication",
       "Tailwind CSS",
-      "Vite"
+      "Vite",
     ],
     repo: "https://github.com/abhi13071307/Store_rater_Full_Stack",
     details: {
@@ -24,20 +97,21 @@ const projects = [
         "RESTful APIs for CRUD operations",
         "PostgreSQL database with Prisma ORM",
         "Responsive frontend built with React and Tailwind CSS",
-        "Protected routes and token-based login system"
+        "Protected routes and token-based login system",
       ],
       challenges: [
         "Implementing secure JWT authentication flow",
         "Synchronizing store–user data across frontend and backend",
-        "Designing efficient database schema for store–review relationships"
+        "Designing efficient database schema for store–review relationships",
       ],
       outcomes: [
         "Improved understanding of full-stack development pipeline",
         "Hands-on experience with PostgreSQL and Prisma ORM",
-        "Implemented modular backend architecture using Express.js"
-      ]
-    }
+        "Implemented modular backend architecture using Express.js",
+      ],
+    },
   },
+
   {
     title: "Workflow Automation with AI Agent",
     slug: "upthrust-assignment",
@@ -54,7 +128,7 @@ const projects = [
       "MongoDB",
       "Mongoose",
       "REST API",
-      "Tailwind CSS"
+      "Tailwind CSS",
     ],
     repo: "https://github.com/abhi13071307/Upthrust_Assignment",
     details: {
@@ -65,19 +139,19 @@ const projects = [
         "Dynamic weather data fetching and analysis",
         "Scalable backend architecture with Express.js and MongoDB",
         "Modular and reusable REST API endpoints",
-        "Clean UI with Tailwind CSS and responsive layout"
+        "Clean UI with Tailwind CSS and responsive layout",
       ],
       challenges: [
         "Building a reliable communication layer between the AI agent and REST endpoints",
         "Handling asynchronous API calls efficiently",
-        "Structuring scalable and readable backend modules"
+        "Structuring scalable and readable backend modules",
       ],
       outcomes: [
         "Developed a real-time AI-powered automation pipeline",
         "Enhanced understanding of API orchestration and async data flows",
-        "Delivered a stable, extensible project demonstrating AI-based backend design"
-      ]
-    }
+        "Delivered a stable, extensible project demonstrating AI-based backend design",
+      ],
+    },
   },
   {
     title: "Hedging & Backtesting Toolkit",
@@ -92,7 +166,7 @@ const projects = [
       "backtrader",
       "scikit-learn",
       "Jupyter Notebook",
-      "CSV / OHLC data"
+      "CSV / OHLC data",
     ],
     repo: "https://github.com/abhi13071307/Hedging-py",
     details: {
@@ -103,19 +177,19 @@ const projects = [
         "Strategy implementation and backtesting (position sizing, slippage, fees)",
         "Risk metrics: drawdown, Sharpe ratio, volatility analysis",
         "Visual reports and charts using matplotlib",
-        "Interactive research via Jupyter notebooks"
+        "Interactive research via Jupyter notebooks",
       ],
       challenges: [
         "Ensuring numerical stability and proper handling of missing market data",
         "Modeling realistic transaction costs and slippage in simulations",
-        "Designing extensible backtesting hooks for different strategies"
+        "Designing extensible backtesting hooks for different strategies",
       ],
       outcomes: [
         "Faster iteration on hedging strategies through reusable backtest modules",
         "Improved ability to quantify strategy risk and performance",
-        "Practical exposure to time-series data processing and financial metrics"
-      ]
-    }
+        "Practical exposure to time-series data processing and financial metrics",
+      ],
+    },
   },
   {
     title: "Instant Feedback System using Facial Recognition",
@@ -130,7 +204,7 @@ const projects = [
       "Keras",
       "Face Detection",
       "Emotion Recognition",
-      "Computer Vision"
+      "Computer Vision",
     ],
     repo: "https://github.com/abhi13071307/Instant-Feedback-System-using-Facial-Recognition",
     details: {
@@ -141,19 +215,19 @@ const projects = [
         "Integration with CCTV video feed for continuous monitoring",
         "Classification of emotions into positive, negative, and neutral categories",
         "Automated feedback computation for customer experience analytics",
-        "Modular and scalable Python design for future improvements"
+        "Modular and scalable Python design for future improvements",
       ],
       challenges: [
         "Ensuring accurate emotion detection across lighting and angles",
         "Processing real-time video streams efficiently",
-        "Optimizing model inference speed for continuous emotion tracking"
+        "Optimizing model inference speed for continuous emotion tracking",
       ],
       outcomes: [
         "Created a production-ready emotion detection system using OpenCV and DeepFace",
         "Demonstrated practical integration of AI models with live CCTV data",
-        "Enhanced experience in computer vision and applied AI model deployment"
-      ]
-    }
+        "Enhanced experience in computer vision and applied AI model deployment",
+      ],
+    },
   },
   {
     title: "Kitchen Chicken 3D",
@@ -168,7 +242,7 @@ const projects = [
       "NavMesh AI",
       "3D Modeling",
       "Animation",
-      "Game Design Patterns"
+      "Game Design Patterns",
     ],
     repo: "https://github.com/abhi13071307/KitchenChicken-FullGame-3D",
     details: {
@@ -179,19 +253,20 @@ const projects = [
         "Player-controlled cooking, ingredient management, and delivery",
         "Recipe-based gameplay with real-time scoring and time constraints",
         "AI-powered customer order system using Unity’s NavMesh agents",
-        "Polished UI and smooth animations for an engaging experience"
+        "Polished UI and smooth animations for an engaging experience",
       ],
       challenges: [
         "Balancing performance and visual fidelity for 3D scenes",
         "Creating realistic object physics and responsive controls",
-        "Implementing order management logic within Unity's event system"
+        "Implementing order management logic within Unity's event system",
       ],
       outcomes: [
         "Developed a fully functional 3D Unity game from concept to completion",
         "Improved understanding of C# scripting and Unity physics systems",
-        "Gained practical experience in game loop design and optimization"
-      ]
-    }
-  }
+        "Gained practical experience in game loop design and optimization",
+      ],
+    },
+  },
 ];
+
 export default projects;
