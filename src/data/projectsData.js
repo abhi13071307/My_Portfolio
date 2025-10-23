@@ -1,3 +1,4 @@
+//all projects
 const projects = [
   {
     title: "Interactive User Relationship & Hobby Network",
